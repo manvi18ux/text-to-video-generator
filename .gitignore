@@ -1,0 +1,6 @@
+t2v/
+__pycache__/
+*.pyc
+.env
+*.log
+outputs/
