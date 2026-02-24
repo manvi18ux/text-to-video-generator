@@ -2,67 +2,82 @@
 
 Generate short videos from text prompts using Latent Diffusion Models.
 
-## Demo
+> Built with ModelScope 1.7B · PyTorch · Diffusers · Gradio
 
+---
 
-![Ocean Waves](outputs/video_1.mp4)
+## Features
 
+- **Text to Video** — type any prompt, get a short AI generated video
+- **Style Presets** — Cinematic, Nature, Dramatic, Minimal, Anime
+- **Frame Interpolation** — 2x/3x smoother motion using frame blending
+- **Anti-Flicker** — temporal blending + histogram matching for stable video
+- **Generation History** — saves last 10 generations with prompts and timing
+- **CFG Scale Slider** — control how strictly the model follows your prompt
+- **Seed Control** — same seed = reproducible results
 
-
-## What It Does
-Type any text prompt → AI generates a short video using diffusion models.
-
-## Tech Stack
-- Python, PyTorch
-- Diffusion Models (ModelScope 1.7B — 1.7 Billion parameters)
-- CLIP Text Encoder (converts text → 768-dim vectors)
-- Variational Autoencoder (VAE)
-- DDIM Scheduler (25 inference steps)
-- Gradio Web UI
+---
 
 ## How It Works
-1. CLIP encodes your text prompt into 77×768 dimensional embeddings
-2. Random noise sampled in latent space (8× smaller than pixel space via VAE)
-3. U-Net runs 25 DDIM denoising steps conditioned on text via CFG
-4. VAE decoder converts clean latents back to pixel frames
-5. Frames exported as MP4 at 8 FPS
+You type a prompt
+↓
+Style preset adds cinematic/nature/dramatic tags automatically
+↓
+CLIP encodes text → 77×768 dimensional embeddings
+↓
+U-Net runs 25 DDIM denoising steps conditioned on text via CFG
+↓
+VAE decoder converts latents → pixel frames
+↓
+Frame interpolation doubles/triples frame count for smooth motion
+↓
+Temporal blending + histogram matching reduces flickering
+↓
+MP4 video exported
+---
+
+## Architecture
+Text Prompt
+↓
+CLIP Text Encoder (77×768 vectors)
+↓
+U-Net + Temporal Attention ←── DDIM Scheduler (25 steps)
+↓                          CFG Scale (7.5)
+VAE Decoder
+↓
+Raw Frames (16 frames)
+↓
+Frame Interpolation (16 → 32 frames)
+↓
+Temporal Blending + Histogram Matching
+↓
+MP4 Output (256×256 @ 16fps)
+---
 
 ## Project Structure
 text-to-video/
-├── config.py            # All settings (CFG, steps, seed, fps)
-├── generator.py         # Core pipeline (load model + generate)
-├── prompt_enhancer.py   # Improves prompts with style presets
-├── app.py               # Gradio web interface
+├── app.py               # Gradio UI + full pipeline
+├── config.py            # All settings
+├── generator.py         # Core generation logic
+├── prompt_enhancer.py   # Style-based prompt enhancement
+├── requirements.txt     # Dependencies
+├── README.md
 └── outputs/             # Generated videos
-## Run It Yourself
+├── video_1.mp4
+├── video_2.mp4
+└── video_3.mp4
+---
 
-### Install dependencies
-```bash
-pip install -r requirements.txt
-Generate a video
-from generator import load_pipeline, generate_video
+## Tech Stack
 
-pipe = load_pipeline()
-generate_video(pipe, "Ocean waves at sunset")
-Launch Web UI
-python app.py
-Sample Outputs
-Prompt
-Style
-Ocean waves crashing at sunset
-Nature
-Fire burning at night
-Dramatic
-Rocket launching into space
-Cinematic
-Key Concepts
-Diffusion Models — Learn to reverse a gradual noising process
-CFG (Classifier-Free Guidance) — Controls prompt adherence
-Latent Space — Runs diffusion 48× faster than pixel space
-Temporal Attention — Ensures frame-to-frame consistency in video
-Interview Topics Covered
-Diffusion model forward/reverse process
-Reparameterization trick in VAE
-Why latent space instead of pixel space
-How CFG works mathematically
-DDIM vs DDPM schedulers
+| Component | Technology |
+|-----------|------------|
+| Model | ModelScope 1.7B (1.7B parameters) |
+| Framework | PyTorch + Diffusers |
+| Text Encoder | CLIP ViT-Large (768-dim) |
+| Scheduler | DDIM (25 steps) |
+| VAE | Variational Autoencoder |
+| UI | Gradio 5 |
+| Post-processing | OpenCV (interpolation + blending) |
+
+---
