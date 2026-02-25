@@ -5,7 +5,6 @@ diffusers
 transformers
 accelerate
 huggingface_hub
-gradio==5.50.0
 imageio
 imageio-ffmpeg
 numpy
