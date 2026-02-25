@@ -1,3 +1,14 @@
+---
+title: Text-to-Video AI Generator
+emoji: 🎬
+colorFrom: purple
+colorTo: blue
+sdk: gradio
+sdk_version: 5.0.0
+app_file: app.py
+pinned: true
+license: apache-2.0
+---
 # 🎬 Text-to-Video AI Generator
 
 Generate short videos from text prompts using Latent Diffusion Models.
