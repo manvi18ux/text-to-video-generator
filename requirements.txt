@@ -1,13 +1,13 @@
 #Shopping list of libraries your project needs. Like a recipe's ingredient list.
 
-torch==2.1.0
-diffusers==0.25.0
-transformers==4.36.0
-accelerate==0.25.0
-huggingface_hub==0.20.3
+torch
+diffusers
+transformers
+accelerate
+huggingface_hub
 gradio
 imageio
 imageio-ffmpeg
-numpy<2
+numpy
 Pillow
 sentencepiece
