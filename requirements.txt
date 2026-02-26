@@ -4,9 +4,11 @@ torch
 diffusers
 transformers
 accelerate
+gradio==5.50.0
 huggingface_hub
 imageio
 imageio-ffmpeg
 numpy
 Pillow
 sentencepiece
+opencv-python

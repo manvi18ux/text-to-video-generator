@@ -308,4 +308,4 @@ with gr.Blocks(title='Text-to-Video AI', theme=gr.themes.Monochrome()) as demo:
         outputs=[video_out, status_out, history_out]
     )
 
-demo.launch(share=True)
+demo.launch(server_name="0.0.0.0", server_port=7860)
