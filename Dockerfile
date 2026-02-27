@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
     libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
 RUN pip install --no-cache-dir \
     "huggingface_hub==0.25.0" \
     "diffusers" \
@@ -22,7 +21,7 @@ RUN pip install --no-cache-dir \
     "imageio" \
     "imageio-ffmpeg" \
     "Pillow" \
-    "gradio==4.44.0"
+    "gradio==4.44.1"
 
 COPY . .
 
