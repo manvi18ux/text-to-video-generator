@@ -3,8 +3,7 @@ title: Text-to-Video AI Generator
 emoji: 🎬
 colorFrom: purple
 colorTo: blue
-sdk: gradio
-sdk_version: 5.0.0
+sdk: docker
 app_file: app.py
 pinned: true
 license: mit
