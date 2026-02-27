@@ -270,8 +270,7 @@ with gr.Blocks(title='Text-to-Video AI', theme=gr.themes.Monochrome()) as demo:
                                   label='Inference Steps',
                                   info='More = better quality, slower')
             seed_in   = gr.Number(value=42,
-                                  label='Seed',
-                                  info='Same seed = same output')
+                                  label='Seed (same seed = same output)')
             btn       = gr.Button('🎬 Generate Video', variant='primary', size='lg')
 
             gr.Markdown('### 💡 Examples')
