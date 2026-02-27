@@ -11,17 +11,16 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache-dir \
-    "huggingface_hub==0.25.0" \
+    "torch" \
     "diffusers" \
     "transformers" \
     "accelerate" \
-    "torch" \
     "opencv-python" \
     "numpy" \
     "imageio" \
     "imageio-ffmpeg" \
     "Pillow" \
-    "gradio==4.44.1"
+    "gradio==5.50.0"
 
 COPY . .
 
