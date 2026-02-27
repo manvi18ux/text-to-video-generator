@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-cache-dir gradio==5.50.0
+RUN pip install --no-cache-dir "gradio>=4.44.0,<5.0.0"
 
 COPY . .
 
