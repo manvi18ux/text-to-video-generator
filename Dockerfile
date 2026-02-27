@@ -11,9 +11,18 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-cache-dir "huggingface_hub==0.20.3"
-RUN pip install --no-cache-dir "gradio>=4.44.0,<5.0.0"
+RUN pip install --no-cache-dir \
+    "huggingface_hub==0.25.0" \
+    "diffusers" \
+    "transformers" \
+    "accelerate" \
+    "torch" \
+    "opencv-python" \
+    "numpy" \
+    "imageio" \
+    "imageio-ffmpeg" \
+    "Pillow" \
+    "gradio==4.44.0"
 
 COPY . .
 

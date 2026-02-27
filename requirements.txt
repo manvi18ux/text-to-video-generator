@@ -1,13 +1,3 @@
 #Shopping list of libraries your project needs. Like a recipe's ingredient list.
 
-torch
-diffusers
-transformers
-accelerate
-huggingface_hub
-imageio
-imageio-ffmpeg
-numpy
-Pillow
-sentencepiece
-opencv-python
+# dependencies managed in Dockerfile
