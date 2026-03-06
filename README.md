@@ -39,6 +39,8 @@ Generate short videos from text prompts using Latent Diffusion Models.
 ---
 
 ## How It Works
+
+---
 You type a prompt
 ↓
 Style preset adds cinematic/nature/dramatic tags automatically
@@ -57,6 +59,8 @@ MP4 video exported
 ---
 
 ## Architecture
+
+---
 Text Prompt
 ↓
 CLIP Text Encoder (77×768 vectors)
@@ -75,6 +79,8 @@ MP4 Output (256×256 @ 16fps)
 ---
 
 ## Project Structure
+
+---
 text-to-video/
 ├── app.py               # Gradio UI + full pipeline
 ├── config.py            # All settings
