@@ -39,8 +39,7 @@ Generate short videos from text prompts using Latent Diffusion Models.
 ---
 
 ## How It Works
-
----
+```
 You type a prompt
 ↓
 Style preset adds cinematic/nature/dramatic tags automatically
@@ -56,10 +55,11 @@ Frame interpolation doubles/triples frame count for smooth motion
 Temporal blending + histogram matching reduces flickering
 ↓
 MP4 video exported
+```
 ---
 
 ## Architecture
-
+```
 ---
 Text Prompt
 ↓
@@ -76,10 +76,11 @@ Frame Interpolation (16 → 32 frames)
 Temporal Blending + Histogram Matching
 ↓
 MP4 Output (256×256 @ 16fps)
+```
 ---
 
 ## Project Structure
-
+```
 ---
 text-to-video/
 ├── app.py               # Gradio UI + full pipeline
@@ -92,6 +93,7 @@ text-to-video/
 ├── video_1.mp4
 ├── video_2.mp4
 └── video_3.mp4
+```
 ---
 
 ## Tech Stack
