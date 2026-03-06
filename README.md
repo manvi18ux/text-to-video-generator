@@ -11,11 +11,15 @@ license: mit
 # 🎬 Text-to-Video AI Generator
 
 [
-![Live Demo](https://huggingface.co/spaces/manvivek18ux/text-to-video)
+
+![Live Demo](https://img.shields.io/badge/🤗%20Hugging%20Face-Live%20Demo-blue)
+
+](https://huggingface.co/spaces/manvivek18ux/text-to-video)
 [
-[
-![GitHub] (https://github.com/manvi18ux/text-to-video-generator)
-]
+
+![GitHub](https://img.shields.io/badge/GitHub-Repository-black)
+
+](https://github.com/manvi18ux/text-to-video-generator)
 Generate short videos from text prompts using Latent Diffusion Models.
 
 > Built with ModelScope 1.7B · PyTorch · Diffusers · Gradio
