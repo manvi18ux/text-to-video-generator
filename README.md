@@ -10,6 +10,12 @@ license: mit
 ---
 # 🎬 Text-to-Video AI Generator
 
+[
+![Live Demo](https://huggingface.co/spaces/manvivek18ux/text-to-video)
+[
+[
+![GitHub] (https://github.com/manvi18ux/text-to-video-generator)
+]
 Generate short videos from text prompts using Latent Diffusion Models.
 
 > Built with ModelScope 1.7B · PyTorch · Diffusers · Gradio
@@ -80,14 +86,14 @@ text-to-video/
 
 ## Tech Stack
 
-| Component | Technology |
-|-----------|------------|
-| Model | ModelScope 1.7B (1.7B parameters) |
-| Framework | PyTorch + Diffusers |
-| Text Encoder | CLIP ViT-Large (768-dim) |
-| Scheduler | DDIM (25 steps) |
-| VAE | Variational Autoencoder |
-| UI | Gradio 5 |
-| Post-processing | OpenCV (interpolation + blending) |
+| Component     | Technology |
+|-----------    |------------|
+| Model         | ModelScope 1.7B (1.7B parameters) |
+| Framework     | PyTorch + Diffusers |
+| Text Encoder  | CLIP ViT-Large (768-dim) |
+| Scheduler     | DDIM (25 steps) |
+| VAE           | Variational Autoencoder |
+| UI            | Gradio 5 |
+|Post-processing| OpenCV (interpolation + blending) |
 
 ---
